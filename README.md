@@ -9,5 +9,6 @@ Features
   2. Adding (multiple) prepayment options
   3. Diplay the graph for loan replayments
   4. Create a plan(s) for loan repayment and compare each plan
+  5. Internationalisation
 
 Create Ract version of this website
