@@ -1,3 +1,129 @@
-<p>
-  prepayment works!
-</p>
+<mat-card>
+  <mat-card-content fxLayout="row" fxLayoutGap="15px">
+
+    <div fxLayout="column" class="prepayment-item-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Yearly Payment</mat-label>
+        <input matInput placeholder="Loan Amount">
+        <mat-icon matSuffix>₹</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="dpTearlyStartDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpTearlyStartDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpTearlyStartDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpTearlyStartDate)">
+        </mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="dpYearlyEndDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpYearlyEndDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpYearlyEndDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpYearlyEndDate)">
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" class="prepayment-item-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Bi Annual Payment</mat-label>
+        <input matInput placeholder="Loan Amount">
+        <mat-icon matSuffix>₹</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="dpBiAnnualStartDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpBiAnnualStartDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpBiAnnualStartDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpBiAnnualStartDate)">
+        </mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="dpBiAnnualEndDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpBiAnnualEndDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpBiAnnualEndDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpBiAnnualEndDate)">
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" class="prepayment-item-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Quaterly Payment</mat-label>
+        <input matInput placeholder="Loan Amount">
+        <mat-icon matSuffix>₹</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="dpQuaterlyStartDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpQuaterlyStartDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpQuaterlyStartDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpQuaterlyStartDate)">
+        </mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="dpQuaterlyEndDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpQuaterlyEndDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpQuaterlyEndDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpQuaterlyEndDate)">
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" class="prepayment-item-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Monthly Payment</mat-label>
+        <input matInput placeholder="Loan Amount">
+        <mat-icon matSuffix>₹</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp startView="multi-year" (yearSelected)="chosenYearHandler($event)" (monthSelected)="chosenMonthHandler($event, dp)">
+        </mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="dpEndDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpEndDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpEndDate startView="multi-year" (yearSelected)="chosenYearHandler($event)" (monthSelected)="chosenMonthHandler($event, dpEndDate)">
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" class="prepayment-item-container">
+      <mat-form-field appearance="outline">
+        <mat-label>One Time Payment</mat-label>
+        <input matInput placeholder="Loan Amount">
+        <mat-icon matSuffix>₹</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="dpOneTimeStartDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpOneTimeStartDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpOneTimeStartDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpOneTimeStartDate)">
+        </mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="dpOneTimeEndDate" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dpOneTimeEndDate"></mat-datepicker-toggle>
+        <mat-datepicker #dpOneTimeEndDate startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+          (monthSelected)="chosenMonthHandler($event, dpOneTimeEndDate)">
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>
