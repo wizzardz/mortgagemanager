@@ -1,3 +1,49 @@
-<p>
-  mortgage-details works!
-</p>
+<div fxLayout="column">
+  <mat-card class="mortgage-details-container">
+    <mat-card-header>
+      <mat-card-title>Enter your Mortgage Details</mat-card-title>
+      <mat-card-subtitle>Specify your principle amount, loan duration & interest rate</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutGap="20px">
+      <div fxLayout="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Loan Amount</mat-label>
+          <input matInput placeholder="Loan Amount">
+          <mat-icon matSuffix>₹</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Start Date</mat-label>
+          <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="date">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp startView="multi-year" (yearSelected)="chosenYearHandler($event)" (monthSelected)="chosenMonthHandler($event, dp)"
+            panelClass="example-month-picker">
+          </mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="15px">
+          <div fxLayoutGap="5px">
+            <mat-form-field appearance="outline">
+              <mat-label>Loan Tenure</mat-label>
+              <input matInput placeholder="Loan Tenure">
+              <span matSuffix>{{group.value}}</span>
+            </mat-form-field>
+            <mat-button-toggle-group #group="matButtonToggleGroup" color="warn">
+              <mat-button-toggle value="Mo">Month</mat-button-toggle>
+              <mat-button-toggle value="Yr">Year</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+        </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Interest Rate</mat-label>
+          <input matInput placeholder="Interest Rate">
+          <mat-icon matSuffix>%</mat-icon>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="end center" class="button-container">
+        <button mat-raised-button color="primary">Calculate EMI</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
